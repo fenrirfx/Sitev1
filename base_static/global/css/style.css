@@ -1,88 +1,111 @@
 /* Navbar Formating Begin*/
+
 nav {
-    background-color: rgba(212,175,55, 0.589);
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+    display: flex; /* Show the navbar when it is targeted and use flexbox */
+    justify-content: center; /* Center the navbar horizontally */
+  }
 
-    border-radius: 10px;
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 200px;
-    height: 100vh;
-    transition: left 0.3s ease;
-}
-
-.logo {
-    margin-bottom: 20px;
-}
-
-.logo-image {
-    max-width: 100%;
-    height: auto;
-}
-
+  
 nav ul {
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
-    overflow: hidden;
-}
-
+    list-style: none; /* Remove default list styles */
+    display: flex; /* Use flexbox to arrange the list items horizontally */
+  }
+  
 nav li {
-    display: block;
-    margin: 10px 0;
-}
-
-nav li a {
-    display: block;
-    color: white;
-    text-align: center;
-    padding: 14px 16px;
-    text-decoration: none;
-}
-
-nav li a:hover {
-    background-color: lightblue;
-}
+    margin-right: 40px; /* Add some spacing between list items */
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  }
+  
+nav li:last-child {
+    margin-right: 0; /* Remove right margin from the last list item */
+  }
+  
+nav a {
+    text-decoration: none; /* Remove underline from links */
+    color: lightseagreen; /* Set the link color */
+  }
 
 @media (max-width: 767px) {
-    nav {
-        width: 20%;
-        height: auto;
-        padding: 10px;
-        position: static;
-        background-color: (212,175,55, 0.8);
-      }
-    
-      .logo {
-        margin-bottom: 10px;
-      }
-    
-      nav ul {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-      }
-    
-      nav li {
-        margin: 10px;
-      }
+    /* Apply different settings for mobile devices with a maximum width of 600px */
+    nav{
+        display: none;
     }
+    nav li {
+        margin-right: 15px; /* Add some spacing between list items */
+    }
+  }
 
 /* Navbar Formating End*/
-h1{
-    font-size: 24px; /* Adjust the font size for mobile */
-    text-align: center; /* Center the heading on mobile */
-    margin: 10px; /* Add some margin for spacing */
-    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+
+header {
+    position: relative;
+    z-index: 2;
+  }
+
+header img {
+    display: block; /* make the image a block-level element */
+    width: 100%; /* stretch the image horizontally to cover the entire header */
+    height: 30vh; /* maintain the image's aspect ratio */
+    margin: 0; /* remove any default margins */
+    top: 0; /* position the image at the top */
+    left: 0; /* position the image at the left */
+  }
+
+@media (max-width: 767px) {
+    /* Apply different settings for mobile devices with a maximum width of 600px */
+    header img {
+    height: 8vh; /* Adjust the height for mobile */
+    }
+  }
+  
+
+body{
+    background-image: url('../images/foto1.jpg');
+    background-repeat: no-repeat; /* prevent image from repeating */
+    background-position: center top; /* position the image at the center */
+    background-size: cover; /* scale the image to cover the entire body */
+    
 }
 
-.logo-image {
+.gallery {
+    display: flex;
+    overflow: hidden;
     max-width: 100%;
-    height: auto;
-}
+    margin-top: 20px; /* Adjust the margin as needed */
+    position: relative; /* Add this positioning */
+    top: 1070px;
+    z-index: 2; /* Add this z-index */
+  }
+@media (max-width: 767px) {
+    .gallery {
+        top: 200px;
+      }
+  }
+  
+.gallery img {
+    flex: 0 0 100%;
+    max-width: 100%;
+    height: 40vw;
+    animation: slideAnimation 10s infinite;
+  }
+  
+@keyframes slideAnimation {
+    0% {
+      transform: translateX(0);
+    }
+    25% {
+      transform: translateX(-100%);
+    }
+    50% {
+      transform: translateX(-200%);
+    }
+    75% {
+      transform: translateX(-300%);
+    }
+    100% {
+      transform: translateX(0);
+    }
+  }
 
 footer {
     text-align: center;
